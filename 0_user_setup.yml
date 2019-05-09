@@ -1,0 +1,32 @@
+- hosts: all
+  become: yes
+  tasks:
+
+    - name: shut off swap
+      shell: swapoff -a
+
+    - name: comment out swap from fstab so it won't restart after a reboot
+      shell: sed -i '/swap/s/^/#/' /etc/fstab
+
+    - name: create the 'dangerousness' user
+      user: name=dangerousness append=yes state=present createhome=yes shell=/bin/bash
+
+    - name: allow 'dangerousness' to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        line: 'dangerousness ALL=NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+    - name: set up authorized keys for the dangerousness user
+      authorized_key: user=dangerousness key="{{item}}"
+      with_file:
+        - ~/.ssh/id_rsa.pub
+
+    - name: copy admin.conf to user's kube config
+      copy:
+        src: ./kube-flannel.yml
+        dest: /home/dangerousness/kube-flannel.yml
+        remote_src: no
+
+
+
