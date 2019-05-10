@@ -29,3 +29,14 @@
       args:
         chdir: $HOME
         creates: pod_network_setup.txt
+
+    - name: Install the bash-completion package 
+      apt:
+        name: bash-completion
+
+    - name: enable bash completions 
+      lineinfile:
+        path: ~/.bashrc
+        line: 'source <(kubectl completion bash)'
+        insertbefore: BOF
+
