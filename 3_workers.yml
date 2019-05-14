@@ -25,4 +25,4 @@
   gather_facts: false
   tasks:
     - name: helm init
-      shell: helm init --service-account tiller
+      shell: helm init --tiller-namespace default
