@@ -40,3 +40,7 @@
         line: 'source <(kubectl completion bash)'
         insertbefore: BOF
 
+    - name: helm init
+      become: yes
+      become_user: dangerousness
+      shell: helm init --service-account tiller

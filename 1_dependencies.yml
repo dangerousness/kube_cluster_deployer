@@ -37,6 +37,18 @@
        name: kubeadm=1.14.0-00
        state: present
 
+   - name: download helm
+     shell: curl -L https://git.io/get_helm.sh | bash
+
+   - name: move helm and tiller into the system path
+     shell: helm completion bash >> /home/dangerousness/.bashrc
+
+   - name: Inserting a line after a pattern in Ansible example 
+     lineinfile:
+       path: /etc/resolv.conf
+       line: nameserver 8.8.8.8
+       insertbefore: options*
+
 - hosts: master0
   become: yes
   tasks:

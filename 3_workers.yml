@@ -10,7 +10,6 @@
       set_fact:
         join_command: "{{ join_command_raw.stdout_lines[0] }}"
 
-
 - hosts: workers
   become: yes
   tasks:
@@ -19,3 +18,11 @@
       args:
         chdir: $HOME
         creates: node_joined.txt
+
+- hosts: master0
+  become: yes
+  become_user: dangerousness
+  gather_facts: false
+  tasks:
+    - name: helm init
+      shell: helm init --service-account tiller

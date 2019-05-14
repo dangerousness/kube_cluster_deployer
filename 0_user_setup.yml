@@ -28,5 +28,3 @@
         dest: /home/dangerousness/kube-flannel.yml
         remote_src: no
 
-
-
