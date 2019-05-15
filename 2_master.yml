@@ -35,6 +35,8 @@
         name: bash-completion
 
     - name: enable bash completions 
+      become: yes
+      become_user: dangerousness
       lineinfile:
         path: ~/.bashrc
         line: 'source <(kubectl completion bash)'
