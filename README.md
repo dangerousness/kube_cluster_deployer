@@ -7,7 +7,7 @@ This currently only supports a single master however you may have as many worker
 
 * At least 3 Ubuntu servers virtual or physical
 
-* All must have IPs that you can be reached from a deploy machine running the ansible scripts 
+* All must have IPs that can be reached from a deploy machine running the ansible scripts 
 
 * All servers need to be able to reach eachother as well as connect out to the internet
 
