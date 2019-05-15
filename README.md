@@ -1,4 +1,4 @@
-# This is an Ansible driven Kubernetes(K8s) cluster deployer
+# This is an Ansible driven Kubernetes (K8s) cluster deployer
 
 
 ## Prerequisites for the Cluster
