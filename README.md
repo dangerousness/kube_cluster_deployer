@@ -16,7 +16,11 @@
 
 ## Prerequisites for the deploy machine
 
-* Any machine with ansible installed that can reach the IPs of the aforementioned servers 
+* Any Mac or Linux machine with ansible installed
+
+* It should be able to reach the IPs of the aforementioned servers 
+
+* You should already have generated ssh keys on the deploy machine (~/.ssh/id_rsa.pub exists) 
 
 
 ## Config on deploy machine
