@@ -21,8 +21,13 @@
 
 ## Config on deploy machine
 
-Edit the file 'hosts' located in this repo. Change the IPs for match your servers.
+Clone this repo to the deploy machine:
+```
+git clone https://github.com/dangerousness/kube_cluster_deployer.git
+```
+cd into that directory (kube_cluster_deployer) and edit the file 'hosts' located in this repo
 
+Change the IPs to match those of your Ubuntu servers:
 ```
 [masters]
 master0 ansible_host=10.10.10.53 ansible_user=user
@@ -37,6 +42,7 @@ ansible_python_interpreter=/usr/bin/python3
 ```
 
 ## Usage
+
 ```bash
 
 ansible-playbook --ask-sudo-pass -i hosts 0_user_setup.yml
