@@ -22,7 +22,7 @@
       with_file:
         - ~/.ssh/id_rsa.pub
 
-    - name: copy admin.conf to user's kube config
+    - name: copy kube-flannel.yml to user's kube-flannel.yml
       copy:
         src: ./kube-flannel.yml
         dest: /home/dangerousness/kube-flannel.yml
