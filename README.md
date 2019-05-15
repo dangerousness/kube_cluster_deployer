@@ -1,5 +1,7 @@
 # This is an Ansible driven Kubernetes (K8s) cluster deployer
 
+This currently only supports a single master however you may have as many workers as you want
+
 
 ## Prerequisites for the Cluster
 
