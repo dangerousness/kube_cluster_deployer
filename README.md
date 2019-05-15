@@ -22,7 +22,7 @@
 ## Config on deploy machine
 
 Clone this repo to the deploy machine:
-```
+```bash
 git clone https://github.com/dangerousness/kube_cluster_deployer.git
 ```
 cd into that directory (kube_cluster_deployer) and edit the file 'hosts' located in this repo
